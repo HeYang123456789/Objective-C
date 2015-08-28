@@ -8,8 +8,12 @@
 
 #import "NSString+Calculator_Algorithm.h"
 
+int isMin;
+
 @implementation NSString (Calculator_Algorithm)
 //不可变转为可变
+
+
 -(NSMutableString*)stringToMutableString
 {
     return [NSMutableString stringWithString:self];
@@ -20,13 +24,22 @@
 //去两边括号
 -(NSMutableString*)removeBracket
 {
-    
+    isMin = 0;
     NSMutableString *haveBracket = [self stringToMutableString];
     if ([haveBracket hasPrefix:@"("]) {
         [haveBracket deleteCharactersInRange:[haveBracket rangeOfString:@"("]];
     }
     if ([haveBracket hasSuffix:@")"]) {
         [haveBracket deleteCharactersInRange:[haveBracket rangeOfString:@")"]];
+    }
+    //这里要处理去括号后，开头有正有负的情况
+    //开头有"+"就处理掉
+    if ([[haveBracket substringToIndex:1] isEqualToString:@"+"]) {
+        [haveBracket deleteCharactersInRange:NSMakeRange(0, 1)];
+    }
+    if ([[haveBracket substringToIndex:1] isEqualToString:@"-"]) {
+        isMin = 1;
+        [haveBracket deleteCharactersInRange:NSMakeRange(0, 1)];
     }
     return haveBracket;
 }
@@ -56,6 +69,9 @@
     for (NSString* numberStr in [self getDigitStringArray]) {
         [mutArray addObject:[numberStr getNumberFromString]];
     }
+    if (isMin == 1) {
+        mutArray[0] = [[NSNumber numberWithDouble:0] sub:mutArray[0]];
+    }
     return mutArray;
 }
 //=======================四则运算
@@ -70,16 +86,18 @@
     NSNumber* left = [[NSNumber alloc]initWithDouble:0];
     NSNumber* right = digitArray[0];
     NSNumber* sign = [[NSNumber alloc]initWithDouble:1];
+    NSLog(@"%@",self);
     for (int i=0; i<operation.count; i++) {
         NSString* ope = operation[i];
         if ([ope isEqualToString:@"+"]) {
             left = [left add:[sign mul:right]];
             sign = [[NSNumber alloc]initWithDouble:1];
-            right = digitArray[i+1];
+                right = digitArray[i+1];
         }
         if ([ope isEqualToString:@"-"]) {
             left = [left add:[sign mul:right]];
             sign = [[NSNumber alloc]initWithDouble:-1];
+            NSLog(@"%@",digitArray[i]);
             right = digitArray[i+1];
         }
         if ([ope isEqualToString:@"×"]) {

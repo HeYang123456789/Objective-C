@@ -305,6 +305,7 @@
 {
     return [rx firstMatch:self];
 }
+//=============我要补充的业务逻辑：判断字符串首个字符是不是匹配对象
 //=================我补充的=================================
 //2
 - (NSString*) firstMatchToStringWithPattern:(NSString*)pattern
