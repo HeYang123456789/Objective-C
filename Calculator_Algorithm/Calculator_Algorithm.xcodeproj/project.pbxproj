@@ -12,6 +12,7 @@
 		3B7EEC4B1B90617200D7B6A8 /* NSNumber+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EEC471B90617200D7B6A8 /* NSNumber+Operation.m */; };
 		3B7EEC4C1B90617200D7B6A8 /* NSString+Calculator_Algorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EEC491B90617200D7B6A8 /* NSString+Calculator_Algorithm.m */; };
 		3B7EEC4F1B90617800D7B6A8 /* RegExCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7EEC4E1B90617800D7B6A8 /* RegExCategories.m */; };
+		3BD137331B91D2200019E062 /* NSString+Special.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD137321B91D2200019E062 /* NSString+Special.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		3B7EEC491B90617200D7B6A8 /* NSString+Calculator_Algorithm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Calculator_Algorithm.m"; sourceTree = "<group>"; };
 		3B7EEC4D1B90617800D7B6A8 /* RegExCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegExCategories.h; sourceTree = "<group>"; };
 		3B7EEC4E1B90617800D7B6A8 /* RegExCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegExCategories.m; sourceTree = "<group>"; };
+		3BD137311B91D2200019E062 /* NSString+Special.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Special.h"; sourceTree = "<group>"; };
+		3BD137321B91D2200019E062 /* NSString+Special.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Special.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,8 @@
 				3B7EEC471B90617200D7B6A8 /* NSNumber+Operation.m */,
 				3B7EEC481B90617200D7B6A8 /* NSString+Calculator_Algorithm.h */,
 				3B7EEC491B90617200D7B6A8 /* NSString+Calculator_Algorithm.m */,
+				3BD137311B91D2200019E062 /* NSString+Special.h */,
+				3BD137321B91D2200019E062 /* NSString+Special.m */,
 				3B7EEC4D1B90617800D7B6A8 /* RegExCategories.h */,
 				3B7EEC4E1B90617800D7B6A8 /* RegExCategories.m */,
 			);
@@ -141,6 +146,7 @@
 				3B7EEC4F1B90617800D7B6A8 /* RegExCategories.m in Sources */,
 				3B7EEC3E1B90615700D7B6A8 /* main.m in Sources */,
 				3B7EEC4C1B90617200D7B6A8 /* NSString+Calculator_Algorithm.m in Sources */,
+				3BD137331B91D2200019E062 /* NSString+Special.m in Sources */,
 				3B7EEC4A1B90617200D7B6A8 /* Calculator_Algorithm.m in Sources */,
 				3B7EEC4B1B90617200D7B6A8 /* NSNumber+Operation.m in Sources */,
 			);
@@ -259,6 +265,7 @@
 				3B7EEC431B90615700D7B6A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
