@@ -441,6 +441,7 @@
 - (RxMatch*) firstMatchWithDetails:(NSRegularExpression*)rx;
 //=================我补充的=================================
 - (BOOL) isMatchWithPattern:(NSString*)pattern;
+- (int) indexOfWithPattern:(NSString*)pattern;
 //1
 - (NSString*) replaceWithPattern:(NSString*)pattern withBlock:(NSString*(^)(NSString* match))replacer;
 //2

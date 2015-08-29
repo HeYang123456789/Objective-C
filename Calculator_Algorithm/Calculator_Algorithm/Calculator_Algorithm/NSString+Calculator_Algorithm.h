@@ -22,6 +22,7 @@
 #import <Foundation/Foundation.h>
 #import "RegExCategories.h"
 #import "NSNumber+Operation.h"
+#import "NSString+Special.h"
 @interface NSString (Calculator_Algorithm)
 
 -(NSMutableString*)removeBracket;

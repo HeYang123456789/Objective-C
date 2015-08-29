@@ -254,7 +254,12 @@
 {
     return [rx indexOf:self];
 }
-
+//=================我补充的=================================
+- (int) indexOfWithPattern:(NSString*)pattern
+{
+    return [[pattern toRx] indexOf:self];
+}
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - (NSArray*) split:(NSRegularExpression*)rx
 {
     return [rx split:self];

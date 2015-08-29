@@ -59,18 +59,22 @@ static Calculator_Algorithm *_calculatorAlgorithm = nil;
 //}
 -(void)run
 {
+    NSLog(@"开始的字符串：%@",_str);
     while ([_str isMatchWithPattern:@"\\([\\d\\.\\+\\-\\×\\÷]+\\)"]) {
-        NSLog(@"有匹配对象: ( ) ");
+        _str = [_str removePlusMinusSpecial];
         _str = [_str replaceWithPattern:@"\\([\\d\\.\\+\\-\\×\\÷]+\\)" withBlock:^NSString *(NSString *match) {
             //这里就需要import "NSString+Calculator_Algorithm.h"
             return [match getStringResult];
         }];
+        NSLog(@"匹配子括号后替换之后%@",_str);
     }
 }
 -(NSString*)getResult
 {
     [self run];
-    
+    NSLog(@"最后处理之前：%@",_str);
+    _str = [_str removePlusMinusSpecial];
+    NSLog(@"最后处理之后：%@",_str);
     _str = [_str getStringResult];
     
     return _str;

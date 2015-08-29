@@ -17,6 +17,7 @@
 #import <Foundation/Foundation.h>
 #import "RegExCategories.h"
 #import "NSString+Calculator_Algorithm.h"
+#import "NSString+Special.h"
 @interface Calculator_Algorithm : NSObject
 
 @property (strong,nonatomic) NSString* str;

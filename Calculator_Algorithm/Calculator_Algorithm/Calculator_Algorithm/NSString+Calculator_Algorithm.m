@@ -24,24 +24,37 @@ int isMin;
 //去两边括号
 -(NSMutableString*)removeBracket
 {
-    isMin = 0;
     NSMutableString *haveBracket = [self stringToMutableString];
+    NSLog(@"haveBracket去括号之前%@",haveBracket);
     if ([haveBracket hasPrefix:@"("]) {
-        [haveBracket deleteCharactersInRange:[haveBracket rangeOfString:@"("]];
+        [haveBracket deleteCharactersInRange:NSMakeRange(0, 1)];
     }
     if ([haveBracket hasSuffix:@")"]) {
-        [haveBracket deleteCharactersInRange:[haveBracket rangeOfString:@")"]];
+        [haveBracket deleteCharactersInRange:NSMakeRange([haveBracket length]-1, 1)];
     }
-    //这里要处理去括号后，开头有正有负的情况
-    //开头有"+"就处理掉
-    if ([[haveBracket substringToIndex:1] isEqualToString:@"+"]) {
-        [haveBracket deleteCharactersInRange:NSMakeRange(0, 1)];
-    }
-    if ([[haveBracket substringToIndex:1] isEqualToString:@"-"]) {
-        isMin = 1;
-        [haveBracket deleteCharactersInRange:NSMakeRange(0, 1)];
-    }
+    NSLog(@"haveBracket去括号之后1:%@",haveBracket);
+    haveBracket = [[NSMutableString alloc] initWithString:[haveBracket removePlusMinusSpecial]];
+    NSLog(@"haveBracket去括号之后2:%@",haveBracket);
+    haveBracket = [self removeStartMinus:haveBracket];
+    NSLog(@"haveBracket去括号之后3:%@",haveBracket);
     return haveBracket;
+}
+/**
+ *  仅仅用于处理开头为"-"的情况
+ *
+ *  @param str
+ *
+ *  @return 
+ */
+-(NSMutableString*)removeStartMinus:(NSMutableString*)str
+{
+    isMin = 0;
+    
+    if ([[str substringToIndex:1] isEqualToString:@"-"]) {
+        isMin = 1;
+        [str deleteCharactersInRange:NSMakeRange(0, 1)];
+    }
+    return str;
 }
 //=======================拆分为数据字符数组，和符号字符数组
 -(NSArray*)getDigitStringArray
