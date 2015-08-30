@@ -87,7 +87,7 @@ int isMin;
     }
     return mutArray;
 }
-//=======================四则运算
+//=======================四则运算============================
 -(NSNumber*)getFourOperationsResult
 {
     NSArray* digitArray = [self getNumberArrayFromStringArray];
@@ -122,6 +122,7 @@ int isMin;
     }
     return [left add:[sign mul:right]];
 }
+//=======================四则运算============================
 //=======================最后获取结果要转为NSString
 -(NSString*)getStringResult
 {
