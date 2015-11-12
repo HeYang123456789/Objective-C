@@ -143,6 +143,8 @@ int main(int argc, const char * argv[]) {
 
   ***严格单例类的核心代码*** 和本小项目的源代码有所不同，但是主体部分是一样的，下面代码时转载来自大神的博客<http://www.cnblogs.com/YouXianMing/p/4709209.html#3256420>
   
+  另外还可以直接到我的博文里有更详细的单例模式的讲解<http://www.cnblogs.com/goodboy-heyang/p/4920471.html>
+  
 ```
 #import <Foundation/Foundation.h>
 
